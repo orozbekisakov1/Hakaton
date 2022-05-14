@@ -61,7 +61,18 @@
 
                         <li><a href="#works">Explore</a></li>
 
-                        <li><a href="#team">Login</a></li>
+
+                        {% if request.user.is_authenticated %}
+
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+
+                 <li><a href="{% url 'logout' %}">Logout</a></li>
+
+              {% else %}
+{#                  <li><a href="{% url 'register' %}">Sign Up</a></li>#}
+                  <li><a href="{% url 'login' %}">Login</a></li>
+
+              {% endif %}
 {##}
 {#                        <li><a href="#services">Services</a></li>#}
 {##}
