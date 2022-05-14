@@ -2,13 +2,13 @@ from django.urls import path
 
 
 from . import views
-from .views import (
-    PostListView,
-    PostCreateView,
-    PostDetailView,
-    PostUpdateView,
-    PostDeleteView
-)
+# from .views import (
+#     PostListView,
+#     PostCreateView,
+#     PostDetailView,
+#     PostUpdateView,
+#     PostDeleteView
+# )
 
 
 urlpatterns = [

@@ -4,6 +4,7 @@ from django.db.models import Model
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
 class Post(Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
