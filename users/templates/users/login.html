@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="wrapper">
+  <form class="login">
+    <p class="title">Log in</p>
+    <input type="text" placeholder="Username" autofocus/>
+    <i class="fa fa-user"></i>
+    <input type="password" placeholder="Password" />
+    <i class="fa fa-key"></i>
+    <div class="border-top" pt-3>
+        <small class="text-muted">
+            No Account? <a href="{%  url 'register'%}" class="ml-2">Sign Up</a>
+        </small>
+    </div>
+    <button>
+      <i class="spinner"></i>
+      <span class="state">Log in</span>
+    </button>
+  </form>
+  <footer><a target="blank" href="http://boudra.me/">boudra.me</a></footer>
+  </p>
+</div>
+{% endblock %}
