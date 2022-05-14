@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for place in place_list %}
+        <div class="col-md-4">
+           <div class="blog-post">
+                 <div class="post-media">
+                     <img src="{{ place.image.url }}" alt="">
+                 </div>
+               <div class="post-desc">
+                   <h4>{{ place.title }}</h4>
+                   <h5>{{ place.post_date }}</h5>
+                   <p>{{ place.content }}</p>
+                    <a href="blog.html" class="btn btn-gray-border">Read More</a>
+               </div>
+           </div>
+       </div>
+    {% endfor %}
+{% endblock %}
+

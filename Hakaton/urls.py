@@ -29,6 +29,10 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', u_views.profile, name='profile'),
+    path('bprofile/', u_views.buyer_profile, name='bprofile'),
+
+    path('add/', u_views.add_product, name='add'),
+    path('delete/<int:id>/', u_views.user_delete, name='delete-user'),
     path('', include('blog.urls')),
 ]
 if settings.DEBUG:

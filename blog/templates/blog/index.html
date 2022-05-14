@@ -71,16 +71,17 @@
 							<div id="main-menu" class="collapse scroll navbar-right">
 								<ul class="nav">
                                 
-									<li class="active"> <a href="#home">Home</a> </li>
+									<li class="active"> <a href="{% url 'blog-home' %}">Home</a> </li>
 									
-									<li> <a href="#about">Events</a> </li>
+									<li> <a href="{% url 'blog-list' %}">Events</a> </li>
                                     
                                     <li> <a href="#history">Shop</a> </li>
                                     
-                                    <li> <a href="#works">Explore</a> </li>
+                                    <li><a href="{% url 'place-list' %}">Explore</a></li>
                                     
 
                                     {% if request.user.is_authenticated %}
+                                        <li><a href="{% url 'add' %}">Add Product</a></li>
 
               <li><a href="{% url 'profile' %}">Profile</a></li>
 {#                <li><a href="{% url 'post-create' %}">Create Post</a></li>#}
