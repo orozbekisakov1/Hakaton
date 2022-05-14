@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=100)),
                 ('content', models.TextField()),
                 ('post_date', models.DateTimeField(default=django.utils.timezone.now)),
-                ('image', models.ImageField(default='default.jpg', upload_to='post_image/')),
+                ('image', models.ImageField(default='user_default.jpg', upload_to='post_image/')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
