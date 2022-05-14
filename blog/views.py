@@ -19,6 +19,10 @@ def home(request):
     return render(request, 'blog/index.html', context)
 
 
+def shop_app(request):
+    return render(request, 'blog/shop.html')
+
+
 class PostListView(ListView):
     model = Post
     template_name = 'blog/blog.html'
