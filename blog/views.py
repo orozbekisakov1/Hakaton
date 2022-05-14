@@ -16,24 +16,24 @@ def home(request):
     context = {
         'posts': Post.objects.all()
     }
-    return render(request, 'blog/blog.html', context)
+    return render(request, 'blog/index.html', context)
 
 
-# class PostListView(ListView):
-#     model = Post
-#     template_name = 'blog/index.html.html'
-#     context_object_name = 'object_list'
-#     ordering = ['-post_date']  #выводит последний добавленный пост
-#
-#     def get_queryset(self, *args, **kwargs):
-#         qs = Post.objects.all()
-#         query = self.request.GET.get('q', None)
-#         if query is not None:
-#             qs = qs.filter(
-#                 Q(title__incontains=query) |
-#                 Q(author__username__incontains=query)
-#             )
-#         return qs
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/blog.html'
+    context_object_name = 'object_list'
+    ordering = ['-post_date']  #выводит последний добавленный пост
+
+    def get_queryset(self, *args, **kwargs):
+        qs = Post.objects.all()
+        query = self.request.GET.get('q', None)
+        if query is not None:
+            qs = qs.filter(
+                Q(title__incontains=query) |
+                Q(author__username__incontains=query)
+            )
+        return qs
 
 #
 # class PostCreateView(LoginRequiredMixin, CreateView): #запрашивает залогиниться логинреквайрд

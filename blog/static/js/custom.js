@@ -181,13 +181,13 @@
     Scroll Menu BG
 -------------------------------------------------------*/
   
-     $(window).scroll(function () {
-         if ($("#header").offset().top > 50) {
-             $("#header").addClass("menu-bg");
-         } else {
-             $("#header").removeClass("menu-bg");
-         }
-     });
+     // $(window).scroll(function () {
+     //     if ($("#header").offset().top > 50) {
+     //         $("#header").addClass("menu-bg");
+     //     } else {
+     //         $("#header").addClass("menu-bg");
+     //     }
+     // });
 
 
 /*------------------------------*/
