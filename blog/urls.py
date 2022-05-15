@@ -5,11 +5,11 @@ from . import views
 from .views import (
     ProductListView,
     PostListView,
-    PlaceListView
-    # PostCreateView,
-    # PostDetailView,
-    # PostUpdateView,
-    # PostDeleteView
+    PlaceListView,
+    PostCreateView,
+    PostDetailView,
+    PostUpdateView,
+    PostDeleteView,
 )
 
 

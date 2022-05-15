@@ -2,7 +2,7 @@
 {% block content %}
     {% for product in product_list %}
     {{product.category}}
-        {% if product.category != 'handmade' %}
+{#        {% if product.category != 'handmade' %}#}
         <div class="col-md-4">
            <div class="blog-post">
                  <div class="post-media">
@@ -12,11 +12,11 @@
                    <h4>{{ product.title }}</h4>
                    <h5>{{ product.post_date }}</h5>
                    <p>{{ product.description }}</p>
-                    <a href="blog.html" class="btn btn-gray-border">Read More</a>
+{#                    <a href="blog.html" class="btn btn-gray-border">Read More</a>#}
                </div>
            </div>
        </div>
-        {% endif %}
+{#        {% endif %}#}
         {% if product.category != 'art' %}
             <div class="col-md-4">
            <div class="blog-post">
@@ -27,7 +27,7 @@
                    <h4>{{ product.title }}</h4>
                    <h5>{{ product.post_date }}</h5>
                    <p>{{ product.description }}</p>
-                    <a href="blog.html" class="btn btn-gray-border">Read More</a>
+{#                    <a href={% url 'profile' %} class="btn btn-gray-border">Read More</a>#}
                </div>
            </div>
        </div>

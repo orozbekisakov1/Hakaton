@@ -1,7 +1,9 @@
 {% extends 'blog/shop.html' %}
 {% block content %}
     {% for product in product_list %}
-        {% if product.category == 'handmade' %}
+    {{product.category}}
+
+        {% if product.category != 'handmade' %}
             <div class="col-md-4">
            <div class="blog-post">
                  <div class="post-media">
@@ -11,11 +13,11 @@
                    <h4>{{ product.title }}</h4>
                    <h5>{{ product.post_date }}</h5>
                    <p>{{ product.description }}</p>
-                    <a href="blog.html" class="btn btn-gray-border">Read More</a>
+{#                    <a href="blog.html" class="btn btn-gray-border">Read More</a>#}
                </div>
            </div>
        </div>
-        {% endif %}
+       {% endif %}
     {% endfor %}
 {% endblock %}
 
