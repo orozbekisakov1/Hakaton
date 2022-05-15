@@ -34,6 +34,7 @@ urlpatterns = [
     path('add/', u_views.add_product, name='add'),
     path('delete/<int:id>/', u_views.user_delete, name='delete-user'),
     path('', include('blog.urls')),
+    # path('', include('product.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

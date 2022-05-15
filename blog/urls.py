@@ -3,6 +3,7 @@ from django.urls import path
 
 from . import views
 from .views import (
+    ProductListView,
     PostListView,
     PlaceListView
     # PostCreateView,
@@ -14,7 +15,9 @@ from .views import (
 
 urlpatterns = [
     path('', views.home, name='blog-home'),
-    path('shop/', views.shop_app, name='shop'),
+    path('shop/', ProductListView.as_view(), name='shop-list'),
+    path('shop/arts', views.ProductListArtsView.as_view(), name='arts-list'),
+    path('shop/handmade', views.ProductListHandeView.as_view(), name='hande-list'),
     path('blog-list/', PostListView.as_view(), name='blog-list'),
     path('place-list/', PlaceListView.as_view(), name='place-list'),
     # path('post/add/', PostCreateView.as_view(), name='post-create'),

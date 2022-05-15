@@ -78,7 +78,7 @@ def add_product(request):
             # product.slug = slugify(product.title)
             product.save() #finally save
 
-            return redirect('vendor:vendor-admin')
+            return redirect('shop-list')
 
     else:
         form = ProductForm

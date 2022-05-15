@@ -70,22 +70,22 @@
 									
 									<li> <a href="{% url 'blog-list' %}">Events</a> </li>
                                     
-                                    <li> <a href="{% url 'shop' %}">Shop</a> </li>
+                                    <li> <a href="{% url 'shop-list' %}">Shop</a> </li>
                                     
                                     <li><a href="{% url 'place-list' %}">Explore</a></li>
                                     
 
-                                    {% if request.user.is_authenticated %}
-                                        <li><a href="{% url 'add' %}">Add Product</a></li>
-
-                                      <li><a href="{% url 'profile' %}">Profile</a></li>
+{#                                    {% if request.user.is_authenticated %}#}
+{#                                        <li><a href="{% url 'add' %}">Add Product</a></li>#}
+{##}
+{#                                      <li><a href="{% url 'profile' %}">Profile</a></li>#}
                         {#                <li><a href="{% url 'post-create' %}">Create Post</a></li>#}
-                                      <li><a href="{% url 'logout' %}">Logout</a></li>
-
-                                      {% else %}
+{#                                      <li><a href="{% url 'logout' %}">Logout</a></li>#}
+{##}
+{#                                      {% else %}#}
                         {#                  /<li><a href="{% url 'register' %}">Sign Up</a></li>#}
-                                          <li><a href="{% url 'login' %}">Login</a></li>
-                                      {% endif %}
+{#                                          <li><a href="{% url 'login' %}">Login</a></li>#}
+{#                                      {% endif %}#}
                         {#                                   #}
 {#								    <li> <a href="#services">Services</a> </li>#}
 {#																		#}

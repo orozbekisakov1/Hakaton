@@ -5,11 +5,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-
-
-
-
 class Post(Model):
+
     title = models.CharField(max_length=100)
     content = models.TextField()
     post_date = models.DateTimeField(default=timezone.now)
@@ -35,7 +32,4 @@ class Place(Model):
 
     def get_absolute_url(self):
         return reverse('place-detail', kwargs={'pk': self.pk})
-
-
-
 

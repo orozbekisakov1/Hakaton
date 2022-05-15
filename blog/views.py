@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.db.models import Q
 from blog.models import Post, Place
+from product.models import Category, Product
 from django.views.generic import (
     ListView,
     DetailView,
@@ -19,8 +20,8 @@ def home(request):
     return render(request, 'blog/index.html', context)
 
 
-def shop_app(request):
-    return render(request, 'blog/shop.html')
+# def shop_app(request):
+#     return render(request, 'blog/shop.html')
 
 
 class PostListView(ListView):
@@ -39,6 +40,56 @@ class PostListView(ListView):
             )
         return qs
 
+ 
+class ProductListView(ListView):
+    model = Product
+    template_name = 'blog/shop_list.html'
+    context_object_name = 'product_list'  #выводит последний добавленный пост
+
+    def get_queryset(self, *args, **kwargs):
+        qs = Product.objects.all()
+        for q in qs:
+            print(q.category)
+        query = self.request.GET.get('q', None)
+        if query is not None:
+            qs = qs.filter(
+                Q(title__icontains=query) #|
+                # Q(author__username__incontains=query)
+            )
+        return qs
+
+class ProductListArtsView(ListView):
+    model = Product
+    template_name = 'blog/arts.html'
+    context_object_name = 'product_list'
+    ordering = ['-added_date']  #выводит последний добавленный пост
+
+    def get_queryset(self, *args, **kwargs):
+        qs = Product.objects.all()
+        query = self.request.GET.get('q', None)
+        if query is not None:
+            qs = qs.filter(
+                Q(title__incontains=query) |
+                Q(author__username__incontains=query)
+            )
+        return qs
+
+
+class ProductListHandeView(ListView):
+    model = Product
+    template_name = 'blog/handmade.html'
+    context_object_name = 'product_list'
+    ordering = ['-added_date']  #выводит последний добавленный пост
+
+    def get_queryset(self, *args, **kwargs):
+        qs = Product.objects.all()
+        query = self.request.GET.get('q', None)
+        if query is not None:
+            qs = qs.filter(
+                Q(title__incontains=query) |
+                Q(author__username__incontains=query)
+            )
+        return qs
 
 class PlaceListView(ListView):
     model = Place
